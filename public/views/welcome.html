@@ -1,12 +1,12 @@
 <div class="container" ng-controller="mainCtrl as main">
 	<h3>{{main.msg}}</h3>
-	<a href="/artists">Go to artist page</a>
+	<a href="/artist">Go to artist page</a>
 
-	<!--<div class="search">
-		<form action="/artists" class="form-control" ng-submit="search(artist)">
-			<input type="text" ng-model="artist">
-			<button type="submit" class="btn btn-primary">Search!</button>	
-		</form> -->
+	<div class="search">
+		<form class="form-control">
+			<input type="text" ng-model="main.artist">
+			<a href="/artist" class="btn btn primary" ng-click="search(main.artist)">Go!</a>
+		</form>
 
 	</div>
 </div>

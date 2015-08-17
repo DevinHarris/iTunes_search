@@ -7,7 +7,7 @@ app.config(['$locationProvider', '$routeProvider', function($locationProvider, $
 			templateUrl: 'views/welcome.html',
 			controllerAs: 'mainCtrl'
 		})
-		.when('/artists', {
+		.when('/artist', {
 			controllerAs: 'artistCtrl',
 			templateUrl: 'views/artists.html'
 		})

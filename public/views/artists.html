@@ -1,6 +1,15 @@
 <div class="container text-center" ng-controller="artistCtrl as artist">
-	<h1 ng-if="artist.artist.resultCount === 0">Uh oh! No artist found. Sorry about that.</h1>
-	<h1>You searched for {{artist.artist.results[0].artistName}}</h1>
+	<h1 ng-show="artist.artist.resultCount === 0">Uh oh! Nothing found. Sorry about that.</h1>
+	<h1>You searched for <a href="{{artist.artist[0].artistViewUrl}}">{{artist.artist.results[0].artistName}}</a></h1>
 	<p>{{artist.artist.resultCount}} songs and albums found!</p>
-	<img ng-src="{{artist.artist.results[0].artworkUrl100}}" alt="artist">
+
+	<div class="row" ng-hide="artist.artist.resultCount === 0">
+		<div class="col-md-4" ng-repeat="artist in artist.artist.results">
+			<h3>{{artist.trackCensoredName}}</h3>
+			<img ng-src="{{artist.artworkUrl100}}" alt="artist">
+			<p>{{artist.collectionName}}</p>
+			<a href="{{artist.radioStationUrl}}" target="_blank">Listen on iTunes Radio</a>
+		</div>	
+	</div>
+
 </div>

@@ -5,10 +5,11 @@ angular.module('itunes_app')
 		search = function(artist) {
 			Search.getArtist(artist).then(function(data) {
 				vm.artist = data;
+
 				console.log(vm.artist);
 			});
 		};
 
-		search("Never Too Late");
+		search("Sleeping With Sirens");
 
 	}]);
